@@ -20,24 +20,15 @@ class Restaurant():
     def increment_number_served(self, num):
         self.number_served += num
 
-restaurant = Restaurant('Lisa', 'chinese')
+class IceCreamStand(Restaurant):
+
+    def __init__(self, restaurant_name, cuisine_type):
+        super.__init__(restaurant_name, cuisine_type)
+        self.flavor = ['sweet', 'chocolate', 'strawberry', 'milkshake']
+
+    def describe_flavor(self):
+        print("The restaurant's flavor type have " + self.flavor.title())
+
+restaurant = IceCreamStand('only', 'chinese')
 restaurant.describe_restaurant()
-restaurant.open_restaurant()
-restaurant.served_number()
-
-restaurant.number_served = 35
-restaurant.served_number()
-
-restaurant.set_number_served(55)
-restaurant.served_number()
-
-restaurant.increment_number_served(100)
-restaurant.served_number()
-
-# restaurant_1 = Restaurant('1', 'chinese')
-# restaurant_2 = Restaurant('2', 'English')
-# restaurant_3 = Restaurant('3', 'USA')
-#
-# restaurant_1.describe_restaurant()
-# restaurant_2.describe_restaurant()
-# restaurant_3.describe_restaurant()
+restaurant.describe_flavor()
